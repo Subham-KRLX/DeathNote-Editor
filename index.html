@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Code Editor Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div id="3d-logo"></div>
+                <h1>Death Note <span class="pro-badge">PRO</span></h1>
+            </div>
+            <div class="header-controls">
+                <button id="theme-toggle" class="glass-button">
+                    <span class="theme-icon">☯️</span>
+                    <span class="theme-text">Theme</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar glass-panel">
+                <div class="file-explorer">
+                    <h2>PROJECT FILES</h2>
+                    <div class="file" data-file="script.js">
+                        <span class="file-icon">🗡️</span>
+                        <span>script.js</span>
+                    </div>
+                    <div class="file" data-file="style.css">
+                        <span class="file-icon">📜</span>
+                        <span>style.css</span>
+                    </div>
+                    <div class="file" data-file="index.html">
+                        <span class="file-icon">📖</span>
+                        <span>index.html</span>
+                    </div>
+                </div>
+                <div id="3d-cube-container" class="glass-panel"></div>
+            </aside>
+
+            <div class="editor-area">
+                <div class="code-editor glass-panel">
+                    <div class="editor-header">
+                        <div class="window-controls">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="file-name">script.js</div>
+                    </div>
+                    <textarea id="code-input" spellcheck="false">// Welcome to 3D Code Editor Pro
+function helloWorld() {
+    console.log("Hello, world!");
+}
+
+helloWorld();</textarea>
+                    <pre id="code-output"><code class="language-javascript"></code></pre>
+                </div>
+
+                <div class="terminal glass-panel">
+                    <div class="terminal-header">
+                        <div class="window-controls">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div>TERMINAL</div>
+                    </div>
+                    <div id="terminal-output"></div>
+                    <div class="terminal-input">
+                        <span class="prompt">$</span>
+                        <input type="text" id="command-input" placeholder="Enter command...">
+                        <button id="run-button" class="glass-button">Run</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
