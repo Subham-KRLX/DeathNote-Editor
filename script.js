@@ -7,14 +7,12 @@ const runButton = document.getElementById('run-button');
 const files = document.querySelectorAll('.file');
 const container3d = document.getElementById('3d-cube-container');
 const logo3d = document.getElementById('3d-logo');
-
 function init3DScene() {
     if (typeof THREE === 'undefined') {
         console.error('Three.js not loaded');
         container3d.innerHTML = '<div class="error-message">3D visualization requires Three.js</div>';
         return;
     }
-
     const scene = new THREE.Scene();
     const loader = new THREE.TextureLoader();
 
